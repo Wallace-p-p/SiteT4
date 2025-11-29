@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquamarine Capital</title>
+    <style>
+        :root {
+            --primary-color: #1F4858;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+
+        .section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Sessão Início */
+        #inicio {
+            background-image: url('images/bg1.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            text-align: center;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #2a5d72;
+        }
+
+        /* Sessão Bem Vindo */
+        #bem-vindo {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .coluna-esquerda {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row-top {
+            min-height: 30%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .row-top h1 {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .row-top p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .row-bottom {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .coluna-direita {
+            width: 40%;
+            background-image: url('images/bg2.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: left;
+            color: white;
+            position: relative;
+        }
+
+        .coluna-direita::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .coluna-direita-content {
+            position: relative;
+            z-index: 1;
+            max-width: 80%;
+            padding-top: 10%;
+            padding-bottom: 10%;
+        }
+
+        .coluna-direita h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .coluna-direita p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #636262;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .logo {
+                max-width: 150px;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+
+            #bem-vindo {
+                flex-direction: column;
+            }
+
+            .coluna-esquerda, .coluna-direita {
+                width: 100%;
+            }
+
+            .coluna-esquerda {
+                height: 70%;
+            }
+
+            .coluna-direita {
+                min-height: 30%;
+                padding: 20px;
+            }
+
+            .row-top {
+                padding: 20px;
+            }
+
+            .row-top h2 {
+                font-size: 1.8rem;
+            }
+
+            .coluna-direita h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 1.5rem;
+            }
+
+            .logo {
+                max-width: 120px;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .row-top h2 {
+                font-size: 1.5rem;
+            }
+
+            .row-top p {
+                font-size: 1rem;
+            }
+
+            .coluna-direita h2 {
+                font-size: 1.3rem;
+            }
+
+            .coluna-direita p {
+                font-size: 0.9rem;
+            }
+        }
+        /* Sessão Sobre Nós */
+        #sobre-nos {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .sobre-coluna-texto {
+            width: 50%;
+            background-color: white;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 10%;
+            padding-right: 10%;
+        }
+
+        .sobre-coluna-texto p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .sobre-coluna-imagem {
+            width: 50%;
+            background-image: url('images/bg3.png');
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+        }
+
+        /* Responsividade Sobre Nós */
+        @media (max-width: 768px) {
+            #sobre-nos {
+                flex-direction: column-reverse;
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .sobre-coluna-imagem {
+                width: 100%;
+                height: 25vh;
+            }
+
+            .sobre-coluna-texto {
+                width: 100%;
+                padding: 40px 30px;
+            }
+
+            .sobre-coluna-texto p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sobre-coluna-texto {
+                padding: 30px 20px;
+            }
+
+            .sobre-coluna-texto p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Sessão Líderes */
+        #lideres {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .lideres-header {
+            min-height: 10%;
+            background-image: url('images/bg4.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0 60px;
+        }
+
+        .lideres-header h2 {
+            color: white;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .lideres-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: #26272B;
+        }
+        
+
+        .lider-row {
+            flex: 1;
+            display: flex;
+            width: 100%;
+        }
+
+        .lider-item {
+            flex: 1;
+            display: flex;
+            padding-top: 40px;
+        }
+
+        .lider-foto {
+            width: 30%;
+            padding-right: 30px;
+            padding-left: 30px;
+            display: flex;
+            flex-direction: column;
+            /* margin-left: 10%;
+            margin-right: 10%; */
+            align-items: center;
+        }
+
+        .lider-foto img {
+            max-width: 70%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .lider-foto h3 {
+            color: #acacac;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            align-items: center;
+            text-align: center;
+            /* padding: 5%; */
+        }
+
+        .lider-descricao {
+            width: 70%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-right: 10%;
+        }
+
+        .lider-descricao p {
+            font-size: 1rem;
+            line-height: 1.3;
+            color: #acacac;
+            margin-bottom: 5px;
+        }
+
+        /* Responsividade Líderes */
+        @media (max-width: 768px) {
+            #lideres {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .lideres-header {
+                padding: 0 30px;
+                min-height: 80px;
+            }
+
+            .lideres-header h2 {
+                font-size: 2rem;
+            }
+
+            .lideres-content {
+                flex-direction: column;
+                background-color: #26272B;
+            }
+
+            .lider-row {
+                flex-direction: column;
+            }
+
+            .lider-item {
+                flex-direction: column;
+                padding: 30px;
+            }
+
+            .lider-foto {
+                width: 100%;
+                padding: 0; /* Remove todo o padding lateral */
+                margin: 0 auto 20px; /* Centraliza com margem automática */
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Garante que tudo dentro fique centralizado */
+            }
+
+            .lider-foto img {
+                max-width: 150px;
+                max-height: 150px;
+                margin: 0 auto 15px;
+                /* margin: 0 auto 15px; */
+            }
+
+            .lider-foto h3 {
+                text-align: center;
+            }
+
+            .lider-descricao {
+                width: 100%;
+                padding-right: 0;
+            }
+
+            .lider-descricao p {
+                font-size: 1rem;
+                text-align: left;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lideres-header {
+                padding: 0 20px;
+                min-height: 60px;
+            }
+
+            .lideres-header h2 {
+                font-size: 1.5rem;
+            }
+
+            .lider-item {
+                padding: 20px;
+            }
+
+            /* .lider-foto img {
+                max-width: 150px;
+                align-content: center;
+            } */
+
+            .lider-foto h3 {
+                font-size: 1.2rem;
+            }
+
+            .lider-descricao p {
+                font-size: 0.95rem;
+            }
+        }
+        /* Sessão Vantagens */
+        #vantagens {
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/bg5.png');
+            background-size:contain;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            padding: 60px;
+        }
+
+        .vantagens-titulo {
+            text-align: left;
+            margin-bottom: 50px;
+            padding-left: 15%;
+        }
+
+        .vantagens-titulo h2 {
+            font-size: 3rem;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .vantagens-linhas {
+            display: flex;
+            gap: 40px;
+            flex: 1;
+            align-items: center;
+            padding-left: 20%;
+            padding-right: 20%;
+        }
+
+        .vantagens-coluna {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .vantagem-item {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .vantagem-cabecalho {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .vantagem-icone {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+        }
+
+        .vantagem-icone img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .vantagem-cabecalho h4 {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            margin: 0;
+        }
+
+        .vantagem-item p {
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Responsividade Vantagens */
+        @media (max-width: 768px) {
+            #vantagens {
+                height: auto;
+                min-height: 100vh;
+                padding: 40px 20px;
+            }
+
+            .vantagens-linhas {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .vantagens-coluna {
+                gap: 20px;
+            }
+
+            .vantagem-item {
+                padding: 20px;
+            }
+
+            .vantagens-titulo h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #vantagens {
+                padding: 30px 15px;
+            }
+
+            .vantagens-titulo h2 {
+                font-size: 1.8rem;
+            }
+
+            .vantagem-cabecalho h4 {
+                font-size: 1.1rem;
+            }
+        }
+        /* Sessão Histórico */
+        #historico {
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/bg6.png');
+            background-size: cover;
+            background-position: center;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 60px;
+        }
+
+        .historico-content {
+            max-width: 800px;
+            color: white;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .historico-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .historico-imagem {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+
+        .historico-imagem img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .historico-content p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #e0e0e0;
+        }
+
+        /* Responsividade Histórico */
+        @media (max-width: 768px) {
+            #historico {
+                height: auto;
+                min-height: 100vh;
+                padding: 60px 30px;
+                justify-content: center;
+                text-align: left;
+            }
+
+            .historico-content {
+                max-width: 100%;
+            }
+
+            .historico-content h2 {
+                font-size: 2rem;
+            }
+
+            .historico-imagem {
+                max-width: 400px;
+                margin: 0 auto 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #historico {
+                padding: 40px 20px;
+            }
+
+            .historico-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .historico-content p {
+                font-size: 1rem;
+            }
+
+            .historico-imagem {
+                max-width: 300px;
+            }
+        }
+        /* Sessão Como Participar */
+        #como-participar {
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/bg7.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 0 60px;
+        }
+
+        .como-participar-content {
+            max-width: 800px;
+            color: #333;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 5px;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .como-participar-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: rgb(0, 0, 0);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .como-participar-content p {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            margin-bottom: 35px;
+            color: #000000;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* Responsividade Como Participar */
+        @media (max-width: 768px) {
+            #como-participar {
+                height: auto;
+                min-height: 100vh;
+                padding: 60px 30px;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .como-participar-content {
+                max-width: 100%;
+            }
+
+            .como-participar-content h2 {
+                font-size: 2rem;
+            }
+
+            .como-participar-content p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #como-participar {
+                padding: 40px 20px;
+            }
+
+            .como-participar-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .como-participar-content p {
+                font-size: 1rem;
+            }
+        }
+        /* Sessão Detalhes */
+        #detalhes {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+        }
+
+        .detalhes-coluna {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detalhes-row {
+            min-height: 50%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detalhes-row-bg {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .detalhes-content {
+            padding: 40px;
+            color: #333;
+        }
+
+        .detalhes-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .detalhes-content p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .textowhite {
+            color: white;
+        }
+
+        /* Responsividade Detalhes */
+        @media (max-width: 768px) {
+            #detalhes {
+                height: auto;
+                min-height: 100vh;
+                flex-direction: column;
+            }
+
+            .detalhes-coluna {
+                width: 100%;
+                min-height: 50vh;
+            }
+
+            .detalhes-row {
+                min-height: 50%;
+            }
+
+            .detalhes-content {
+                padding: 30px;
+            }
+
+            .detalhes-content h3 {
+                font-size: 1.3rem;
+            }
+
+            .detalhes-content p {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .detalhes-content {
+                padding: 20px;
+            }
+
+            .detalhes-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .detalhes-content p {
+                font-size: 0.9rem;
+            }
+        }
+            /* Sessão Cadastre-se */
+        #cadastre-se {
+            width: 100%;
+            height: 100vh;
+            background-image: url('images/bg9.png');
+            background-size: cover;
+            background-position: center;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 0 60px;
+        }
+
+        .cadastro-content {
+            min-width: 40%;
+            max-width: 900px;
+            color: white;
+            background: rgba(255, 255, 255, 0.01);
+            padding: 50px;
+            border-radius: 15px;
+        }
+
+        .cadastro-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .cadastro-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-campo {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.514);
+            border-radius: 8px;
+            padding: 15px 20px;
+            font-size: 1rem;
+            color: white;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-campo::placeholder {
+            color: #cccccc;
+        }
+
+        .form-campo:focus {
+            border-color: var(--primary-color);
+        }
+
+        .form-campo.mensagem {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .cadastro-btn {
+            background: white;
+            color: var(--primary-color);
+            align-self: flex-end;
+            border: none;
+            width: 25%;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .cadastro-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        /* Responsividade Cadastre-se */
+        @media (max-width: 1024px) {
+            #cadastre-se {
+                justify-content: center;
+            }
+            
+            .cadastro-content {
+                max-width: 600px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #cadastre-se {
+                height: auto;
+                min-height: 100vh;
+                padding: 60px 30px;
+            }
+
+            .cadastro-content {
+                max-width: 100%;
+                padding: 40px 30px;
+            }
+
+            .cadastro-content h2 {
+                font-size: 2rem;
+            }
+
+            .cadastro-btn {
+                width: 40%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #cadastre-se {
+                padding: 40px 20px;
+            }
+
+            .cadastro-content {
+                padding: 30px 20px;
+            }
+
+            .cadastro-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .form-campo {
+                padding: 12px 15px;
+                font-size: 0.95rem;
+            }
+
+            .cadastro-btn {
+                padding: 12px 25px;
+                font-size: 1rem;
+                width: 40%;
+            }
+        }
+        /* Animações */
+        /* Animações */
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes zoomOut {
+            from {
+                opacity: 0;
+                transform: scale(1.3);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Estado inicial - elementos escondidos */
+        .animate-zoom-in,
+        .animate-fade-in,
+        .animate-fade-up,
+        .animate-fade-left,
+        .animate-fade-right,
+        .animate-zoom-out {
+            opacity: 0;
+        }
+
+        /* Animações SÓ quando a sessão tem a classe 'animated' */
+        .section.animated .animate-zoom-in,
+        section.animated .animate-zoom-in {
+            animation: zoomIn 0.8s ease-out forwards;
+        }
+
+        .section.animated .animate-fade-in,
+        section.animated .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .section.animated .animate-fade-up,
+        section.animated .animate-fade-up {
+            animation: fadeUp 0.8s ease-out forwards;
+        }
+
+        .section.animated .animate-fade-left,
+        section.animated .animate-fade-left {
+            animation: fadeLeft 0.8s ease-out forwards;
+        }
+
+        .section.animated .animate-fade-right,
+        section.animated .animate-fade-right {
+            animation: fadeRight 0.8s ease-out forwards;
+        }
+
+        .section.animated .animate-zoom-out,
+        section.animated .animate-zoom-out {
+            animation: zoomOut 0.8s ease-out forwards;
+        }
+
+        /* Classes de delay - só funcionam quando animação é ativada */
+        .section.animated .delay-1s,
+        section.animated .delay-1s {
+            animation-delay: 1s;
+        }
+
+        .section.animated .delay-2s,
+        section.animated .delay-2s {
+            animation-delay: 2s;
+        }
+
+        .section.animated .delay-3s,
+        section.animated .delay-3s {
+            animation-delay: 3s;
+        }
+
+        .section.animated .delay-4s,
+        section.animated .delay-4s {
+            animation-delay: 4s;
+        }
+
+        .section.animated .delay-5s,
+        section.animated .delay-5s {
+            animation-delay: 5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sessão 1: Início -->
+    <section id="inicio" class="section">
+        <div class="hero-content">
+            <img src="images/logo.png" alt="Aquamarine Capital Logo" class="logo animate-zoom-out">
+            <h1 class="animate-fade-up">Aquamarine Capital</h1>
+            <button class="cta-button animate-fade-up delay-1s">Descubra como potencializar seus investimentos conosco</button>
+        </div>
+    </section>
+
+    <!-- Sessão 2: Bem Vindo -->
+    <section id="bem-vindo">
+        <div class="coluna-esquerda">
+            <div class="row-top animate-fade-right">
+                <h1>Bem vindo</h1>
+                <p>à Aquamarine Capital, onde cuidamos da sua riqueza com a mesma dedicação que um médico cuida da sua saúde.</p>
+            </div>
+            <div class="row-bottom">
+                <video class="video-bg" autoplay muted loop>
+                    <source src="images/BmanFull.mp4" type="video/mp4">
+                    Seu navegador não suporta o elemento de vídeo.
+                </video>
+            </div>
+        </div>
+        <div class="coluna-direita">
+            <div class="coluna-direita-content animate-fade-left delay-1s">
+                <h2>O que fazemos</h2>
+                <p>Especializada em trading e gestão de fortunas, utilizamos tecnologia e um algoritmo proprietário para assegurar retornos consistentes e minimizar riscos para nossos investidores.</p>
+                <button class="cta-button">Entre em contato</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sessão 3: Sobre Nós -->
+    <section id="sobre-nos">
+        <div class="sobre-coluna-texto">
+            <p class="animate-fade-up">Fundada em 2021, a Aquamarine Capital é especializada em tradding de Bitcoin e índice Futuro na B3. Utilizando seu algoritmo proprietário a empresa busca gerar rentabilidade para os seus investidores através de trades de curta duração que apresentam retornos estáveis e consistentes ao longo do tempo. Por se tratarem de trades curtos, a exposição do investidor ao mercado é reduzida, o que diminui o risco da operação e melhora os resutlados.</p>
+            
+            <p class="animate-fade-up delay-1s">A empresa também atua como advisor na gestão de portfólios de investidores e famílias HNW e UHNW. Nessa função, a AQUAMARINE CAPITAL participa no entendimento e na definição dos objetivos do investidor. A partir daí, ela elabora uma alocação de ativos adequada ao atingimento desses objetivos e atua, com o investidor, junto a gestores para determinar as melhores opções de investimento.</p>
+            
+            <p class="animate-fade-up delay-2s">A AQUAMARINE CAPITAL também tem um podcast chamado "Dois Dedos de Mercado", disponível no Youtube. Nesse podcast, os sócios estrevistam empreendedores das mais variadas áreas de atuação, que contam suas histórias profissionais, seus sucessos e fracassos e o que fizeram para atingir seus objetivos.</p>
+        </div>
+        <div class="sobre-coluna-imagem"></div>
+    </section>
+    <!-- Sessão 4: Líderes -->
+    <section id="lideres">
+        <div class="lideres-header">
+            <h2 class="animate-zoom-out">Líderes</h2>
+        </div>
+        <div class="lideres-content">
+            <div class="lider-row">
+                <div class="lider-item">
+                    <div class="lider-foto animate-fade-right">
+                        <h3>MARCELO MECCHI</h3>
+                        <img src="images/l1.png" alt="">
+                    </div>
+                    <div class="lider-descricao animate-fade-left">
+                        <p>Formado em engenharia eletrônica e conomia, tem mais de 35 anos de experiência em mercados financeiros no Brasil e no exterior.</p>
+                        <p>Atuou como trader de outro, moedas e commodities no Banco Safra, foi diretor do Republic National Bank of New York e do HSBC no Brasil, na área de gestão de fortunas e implementou a área de Wealth Management do UBS no Brasil.</p>
+                        <p>Em 2017 mudou-se para a Suiça, inicialmente trabalhando no UBS de Zurique e em seguida em Genebra.</p>
+                        <p>Em 2010 assumiu a direção da América latina no banco Edmond de Rothschild, da família Rothschild.</p>
+                        <p>Após uma breve passagem pela XP em Genebra em 2018, retornou ao Brasil em 2019. Em 2021, junto com o Toru, fundou a MAT Digital Solutions, a precursora da AQUAMARINE CAPITAL.</p>
+                        <p>Como investidor, enxergar as criptomoedas como uma inovação importante para a economia mundial e acredita que terão papel fundamental no futuro, como base de muitas economias e empresas.</p>
+                        <p>Acredita fortemente que elas já são uma classe de ativos relevantes e devem fazer parte de uma alocação eficiente de portfolio.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lider-row">
+                <div class="lider-item">
+                    <div class="lider-foto animate-fade-right delay-1s">
+                        <h3>TORU JUNIOR</h3>
+                        <img src="images/l2.png" alt="">
+                    </div>
+                    <div class="lider-descricao animate-fade-left delay-1s">
+                        <p>Com 12 anos de experiência no mercado financeiro, iniciou no mercado de criptoativos há 10 anos.</p>
+                        <p>Entendeu que existia uma oportunidade no mercado de criptoativos quando um amigo próximo fez fortuna ao investir em criptomoesdas e passou a estudar e se dedicar ao tema desde então.</p>
+                        <p>Para compreender profundamente o funcionamento do mercado de criptoativos, se envolveu com programação e criptografia, culminando com o desenvolvimento de uma criptomoeda (SARGO).</p>
+                        <p>Desde então se dedica à tecnologia blockchain e à gestão de ativos digitais.</p>
+                        <p>Em 2021, analisando a importância que o universo cripto estava tomando no mundo, uniu forças com o Marcelo para formar a AQUAMARINE CAPITAL com o objetivo de participar desta expansão, e colaborar para a disseminação de conhecimento e desenvolvimento do tema no Brasil, além de motivar investidores a participarem ativamente nesta nova classe de ativos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sessão 5: Vantagens -->
+    <section id="vantagens">
+        <div class="vantagens-titulo">
+            <h2>Vantagens</h2>
+        </div>
+        
+        <div class="vantagens-linhas">
+            <div class="vantagens-coluna">
+                <div class="vantagem-item animate-fade-up">
+                    <div class="vantagem-cabecalho">
+                        <div class="vantagem-icone">
+                            <img src="images/icon1.png" alt="Gestão Especializada">
+                        </div>
+                        <h4>Expertise e Experiência Comprovada</h4>
+                    </div>
+                    <p>Nossa equipe é formada por profissionais com décadas de experiência em mercados financeiros e criptoativos. Marcelo Mecchi, um de nossos fundadores, tem uma vasta experiência em instituições financeiras globais e especialização em gestão de fortunas, enquanto Toru Junior traz um profundo conhecimento técnico em blockchain e criptoativos.</p>
+                </div>
+                <div class="vantagem-item animate-fade-up delay-1s">
+                    <div class="vantagem-cabecalho">
+                        <div class="vantagem-icone">
+                            <img src="images/icon1.png" alt="Tecnologia Avançada">
+                        </div>
+                        <h4>Transparência e Segurança</h4>
+                    </div>
+                    <p>Comprometidos com a ética e a transparência, oferecemos total visibilidade sobre as operações e os resultados. Nossos clientes têm acesso a relatóriios detalhados e atualizações regulares, garantindo uma relação de confiança e segurança.</p>
+                </div>
+            </div>
+            
+            <div class="vantagens-coluna">
+                <div class="vantagem-item animate-fade-up delay-3s">
+                    <div class="vantagem-cabecalho">
+                        <div class="vantagem-icone">
+                            <img src="images/icon1.png" alt="Transparência Total">
+                        </div>
+                        <h4>Tecnologia de Ponta</h4>
+                    </div>
+                    <p>Utilizamos um algoritmo proprietário de trading desenvolvido para maximizar retornos e minimizar riscos. Esse sistema permite realizar operações de curta duração, reduzindo a exposição do investidor ao mercado e melhorando consistentemente os resultados financeiros.</p>
+                </div>
+                <div class="vantagem-item animate-fade-up delay-4s">
+                    <div class="vantagem-cabecalho">
+                        <div class="vantagem-icone">
+                            <img src="images/icon1.png" alt="Resultados Consistentes">
+                        </div>
+                        <h4>Acesso Global e Diversificação</h4>
+                    </div>
+                    <p>Oferecemos oportunidades de investimento em uma classe de ativos emergente com potencial de alto retorno. A natureza global do mercado de criptoativos permite aos nossos clientes diversificar seus investimentos além das fronteiras tradicionais, aproveitando tendências e oportunidades em diferentes mercados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sessão 6: Histórico -->
+    <section id="historico">
+        <div class="historico-content">
+            <h2 class="animate-zoom-out">Histórico</h2>
+            <div class="historico-imagem animate-zoom-out delay-1s">
+                <img src="images/hist.png" alt="Aquamarine Capital">
+            </div>
+            <p class="animate-fade-up delay-2s">Este histórico apresenta a evolução mensal e acumulada dos principais ativos acompanhados pela Arandu Digital ao longo de 2025, tanto o BTC quanto o B3 mantiveram resultados consistentes refletindo o bom momento do mercado.</p>
+            <p class="animate-fade-up delay-3s">O BTC registra 43,9% de valorização acumulada no ano, enquanto o B3 alcança 1000,7%, demonstrando forte desempenho no cenário nacional.</p>
+            <p class="animate-fade-up delay-4s">Esses números reforçam a importância do acompanhamento constante e da análise de tendências para identificar oportunidades e otimizar estratégias de investimento.</p>
+        </div>
+    </section>
+    <!-- Sessão 7: Como Participar -->
+    <section id="como-participar">
+        <div class="como-participar-content animate-zoom-out">
+            <h2>Como Participar</h2>
+            <p>Junte-se à Aquamarine Capital e tenha acesso a oportunidades exclusivas de investimento. Nosso processo é simples, transparente e totalmente focado em atender suas necessidades específicas. Comece sua jornada conosco e descubra como potencializar seus resultados.</p>
+            <button class="cta-button animate-zoom-out delay-1s">Iniciar Meu Investimento</button>
+        </div>
+    </section>
+    <!-- Sessão 8: Detalhes -->
+    <section id="detalhes">
+        <!-- Primeira Coluna -->
+        <div class="detalhes-coluna">
+            <!-- Primeira Row (com conteúdo) -->
+            <div class="detalhes-row detalhes-row-bg" style="background-image: url('images/bg81.png')">
+                <div class="detalhes-content" style="margin-top: 5%;">
+                    <h3 class="animate-fade-in">1- Cadastro Inicial'</h3>
+                    <p class="animate-fade-in">Visite nosso site e preencha o formulário de cadastro. Você precisará fornecer algumas informações básicas para configurar sua conta.</p>
+                    
+                    <h3 class="animate-fade-in delay-1s">2- Consulta Personalizada</h3>
+                    <p class="animate-fade-in delay-1s">Após o cadastro, um de nossos especialistas entrará em contato para entender suas necessidades e objetivos de investimento. Isso nos ajudará a oferecer a melhor orientação e estratégia de investimento para seu perfil.</p>
+                </div>
+            </div>
+            
+            <!-- Segunda Row (sem conteúdo - apenas background) -->
+            <div class="detalhes-row detalhes-row-bg" style="background-image: url('images/bg82.png')">
+            </div>
+        </div>
+        
+        <!-- Segunda Coluna -->
+        <div class="detalhes-coluna">
+            <!-- Primeira Row (sem conteúdo - apenas background) -->
+            <div class="detalhes-row detalhes-row-bg" style="background-image: url('images/bg83.png')">
+            </div>
+            
+            <!-- Segunda Row (com conteúdo) -->
+            <div class="detalhes-row detalhes-row-bg" style="background-image: url('images/bg84.png')">
+                <div class="detalhes-content">
+                    <h3 class="animate-fade-in delay-2s" style="color: #2a5d72;">3- investimento inicial</h3>
+                    <p class="animate-fade-in delay-2s" style="color: white;">Com base na consulta, você pode iniciar seu investimento.</p>
+                    
+                    <h3 class="animate-fade-in delay-3s" style="color: #2a5d72;">4- Acesso Global e Diversificação</h3>
+                    <p class="animate-fade-in delay-3s" style="color: white;">Uma vez que seu investimento esteja ativo, você terá acesso a relatórios diários. Nosso time de suporte estará disponível para ajudá-lo com qualquer dúvida ou necessidade que surgir.</p>
+                    
+                    <h3 class="animate-fade-in delay-4s" style="color: #2a5d72;">5- Crescimento</h3>
+                    <p class="animate-fade-in delay-4s" style="color: white;">À medida que você se torna mais confortável e os resultados começam a se materializar, existe a opção de aumentar sua participação e diversificar suas estratégias de investimento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sessão 9: Cadastre-se -->
+    <section id="cadastre-se">
+        <div class="cadastro-content animate-zoom-out">
+            <h2>Cadastre-se</h2>
+            <form class="cadastro-form">
+                <input type="text" class="form-campo" placeholder="Nome" required>
+                <input type="tel" class="form-campo" placeholder="Whatsapp" required>
+                <textarea class="form-campo mensagem" placeholder="Mensagem" required></textarea>
+                <button type="submit" class="cadastro-btn animate-zoom-out delay-1s">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Script -->
+    <script>
+    // Intersection Observer para animações
+    const observerOptions = {
+        threshold: 0.2, // 20% do elemento visível
+        rootMargin: '0px 0px -10% 0px' // Ativa um pouco antes de chegar totalmente
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animated');
+                // Para observar apenas uma vez, descomente a linha abaixo:
+                // observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Observar todas as sessões
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+    </script>
+</body>
+</html>
